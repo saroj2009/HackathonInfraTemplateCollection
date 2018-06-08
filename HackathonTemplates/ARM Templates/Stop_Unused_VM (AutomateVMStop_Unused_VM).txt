@@ -1,0 +1,35 @@
+<#******************************************************************************************************************************************
+Created By    : Priti Bhunia
+Created Date  : 07-May-2018
+Tested By     : 
+Tested Date   : 
+Description   :  Authentication using AutomationConnection & Script will stop the unassigned VM
+
+Modified By   :
+Modified Date :
+Description
+
+******************************************************************************************************************************************#>
+# Authentication using AutomationConnection
+
+$Conn = Get-AutomationConnection -Name AzureRunAsConnection
+Add-AzureRMAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
+#$ConnConn
+
+#Get Resource Group Details
+
+$rgNameStop = @("hackathonteamrg120","hackathonteamrg156","hackathonteamrg160","hackathonteamrg163","hackathonteamrg188","hackathonteamrg204","hackathonteamrg211","hackathonteamrg221","hackathonteamrg223","hackathonteamrg224","hackathonteamrg231","hackathonteamrg238","hackathonteamrg252","hackathonteamrg258","hackathonteamrg276","hackathonteamrg288","hackathonteamrg291","hackathonteamrg309","hackathonteamrg311","hackathonteamrg329","hackathonteamrg330","hackathonteamrg348","hackathonteamrg349","hackathonteamrg354","hackathonteamrg355","hackathonteamrg364","hackathonteamrg368","hackathonteamrg376","hackathonteamrg382","hackathonteamrg385","hackathonteamrg388","hackathonteamrg392","hackathonteamrg396","hackathonteamrg405")
+
+foreach($rgN in $rgNameStop)
+{
+    $vms = Get-AzureRmVM -ResourceGroupName $rgN
+    $vmN = $vms.Name
+    #Write-Host $vmN
+    $vmId = $vms.Id
+    if($vmN.count -gt 0){
+        foreach($vm in $vmN){
+            Stop-AzureRmVM -Name $vm -ResourceGroupName $rgN
+            Write-Host $vm "is stopped"
+        }
+    }
+}

@@ -1,0 +1,51 @@
+<#******************************************************************************************************************************************
+Created By    : Priti Bhunia
+Created Date  : 29-March-2018
+Tested By     : 
+Tested Date   : 
+Description   :  Authentication using AutomationConnection & Script will stop the VM
+
+Modified By   :
+Modified Date :
+Description
+
+******************************************************************************************************************************************#>
+# Authentication using AutomationConnection
+
+$Conn = Get-AutomationConnection -Name AzureRunAsConnection
+Add-AzureRMAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
+
+#Get Resource Group Details
+$rg = Get-AzureRmResourceGroup
+$rgName = $rg.ResourceGroupName
+$rgNameNo = "hackathonteamrg009"
+$rgNameNo12 = "hackathonteamrg041"
+$rgNameNo1 = "hackathonteamrg045"
+$rgNameNo17 = "hackathonteamrg093"
+$rgNameNo2 = "hackathonteamrg131"
+$rgNameNo18 = "hackathonteamrg136"
+$rgNameNo16 = "hackathonteamrg149"
+$rgNameNo13 = "hackathonteamrg151"
+$rgNameNo3 = "hackathonteamrg186"
+$rgNameNo4 = "hackathonteamrg199"
+$rgNameNo5 = "hackathonteamrg232"
+$rgNameNo15 = "hackathonteamrg237"
+$rgNameNo6 = "hackathonteamrg268"
+$rgNameNo7 = "hackathonteamrg279"
+$rgNameNo8 = "hackathonteamrg289"
+$rgNameNo9 = "hackathonteamrg333"
+$rgNameNo14 = "hackathonteamrg361"
+$rgNameNo10 = "hackathonteamrg369"
+$rgNameNo11 = "hackathonteamrg373"
+foreach($rgN in $rgName -notmatch $rgNameNo -notmatch $rgNameNo1 -notmatch $rgNameNo2 -notmatch $rgNameNo3 -notmatch $rgNameNo4 -notmatch $rgNameNo5 -notmatch $rgNameNo6 -notmatch $rgNameNo7 -notmatch $rgNameNo8 -notmatch $rgNameNo9 -notmatch $rgNameNo10 -notmatch $rgNameNo11 -notmatch $rgNameNo12 -notmatch $rgNameNo13 -notmatch $rgNameNo14 -notmatch $rgNameNo15 -notmatch $rgNameNo16 -notmatch $rgNameNo17 -notmatch $rgNameNo18)
+{
+    $vms = Get-AzureRmVM -ResourceGroupName $rgN
+    $vmN = $vms.Name
+    $vmId = $vms.Id
+    if($vmN.count -gt 0){
+        foreach($vm in $vmN){
+            Stop-AzureRmVM -Name $vm -ResourceGroupName $rgN -Force
+            Write-Host $vm "is stopped"
+        }
+    }
+}
