@@ -107,6 +107,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Other Templates\CreateMultipleSQLdbwithArray.ps1" />
+    <Content Include="Other Templates\RBAC Rules for VM.json" />
+    <Content Include="Other Templates\RbackRoleWithJson.ps1" />
+    <Content Include="Other Templates\RbackRule.ps1" />
+    <Content Include="Other Templates\RunBook_Script_For_Start_VM.ps1" />
+    <Content Include="Other Templates\RunBook_Script_For_Stop_VM.ps1" />
+    <Content Include="Other Templates\SQL DB Create.ps1" />
+    <Content Include="Other Templates\UseLoop and If while creating RG in Azure.ps1" />
+    <Content Include="Other Templates\Virtual Machine Oparator Update.json" />
+    <Content Include="Other Templates\Virtual Machine Oparator.json" />
+    <Content Include="Other Templates\Virtual Machine Oparator2.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
