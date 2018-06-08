@@ -89,12 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ARM Templates\Start_Selected_VM %28AutomateVMStart_Selected_VM%29.txt" />
-    <Content Include="ARM Templates\start_vm %28AutomateVMstart_vm%29.txt" />
-    <Content Include="ARM Templates\start_vm_289_348 %28AutomateVMstart_vm_289_348%29.txt" />
-    <Content Include="ARM Templates\Start_VM_369 %28AutomateVMStart_VM_369%29.txt" />
-    <Content Include="ARM Templates\Stop_Unused_VM %28AutomateVMStop_Unused_VM%29.txt" />
-    <Content Include="ARM Templates\stop_VM %28AutomateVMstop_VM%29.txt" />
+    <Content Include="Hachathon Automation Scripts\Start_Selected_VM %28AutomateVMStart_Selected_VM%29.txt" />
+    <Content Include="Hachathon Automation Scripts\start_vm %28AutomateVMstart_vm%29.txt" />
+    <Content Include="Hachathon Automation Scripts\start_vm_289_348 %28AutomateVMstart_vm_289_348%29.txt" />
+    <Content Include="Hachathon Automation Scripts\Start_VM_369 %28AutomateVMStart_VM_369%29.txt" />
+    <Content Include="Hachathon Automation Scripts\Stop_Unused_VM %28AutomateVMStop_Unused_VM%29.txt" />
+    <Content Include="Hachathon Automation Scripts\stop_VM %28AutomateVMstop_VM%29.txt" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -107,17 +107,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <Content Include="Other Templates\CreateMultipleSQLdbwithArray.ps1" />
-    <Content Include="Other Templates\RBAC Rules for VM.json" />
-    <Content Include="Other Templates\RbackRoleWithJson.ps1" />
-    <Content Include="Other Templates\RbackRule.ps1" />
-    <Content Include="Other Templates\RunBook_Script_For_Start_VM.ps1" />
-    <Content Include="Other Templates\RunBook_Script_For_Stop_VM.ps1" />
-    <Content Include="Other Templates\SQL DB Create.ps1" />
-    <Content Include="Other Templates\UseLoop and If while creating RG in Azure.ps1" />
-    <Content Include="Other Templates\Virtual Machine Oparator Update.json" />
-    <Content Include="Other Templates\Virtual Machine Oparator.json" />
-    <Content Include="Other Templates\Virtual Machine Oparator2.json" />
+    <Content Include="Hackathon Other ARM Templates\CreateMultipleSQLdbwithArray.ps1" />
+    <Content Include="Hackathon Other ARM Templates\RBAC Rules for VM.json" />
+    <Content Include="Hackathon Other ARM Templates\RbackRoleWithJson.ps1" />
+    <Content Include="Hackathon Other ARM Templates\RbackRule.ps1" />
+    <Content Include="Hackathon Other ARM Templates\RunBook_Script_For_Start_VM.ps1" />
+    <Content Include="Hackathon Other ARM Templates\RunBook_Script_For_Stop_VM.ps1" />
+    <Content Include="Hackathon Other ARM Templates\SQL DB Create.ps1" />
+    <Content Include="Hackathon Other ARM Templates\UseLoop and If while creating RG in Azure.ps1" />
+    <Content Include="Hackathon Other ARM Templates\Virtual Machine Oparator Update.json" />
+    <Content Include="Hackathon Other ARM Templates\Virtual Machine Oparator.json" />
+    <Content Include="Hackathon Other ARM Templates\Virtual Machine Oparator2.json" />
+    <Content Include="Hackathon Other Documents\Create SQL Database Login Users.docx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
